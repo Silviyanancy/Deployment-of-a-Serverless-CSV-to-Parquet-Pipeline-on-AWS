@@ -9,7 +9,7 @@ def lambda_handler(event, context):
         JobName='CSV_to_Parquet_Converter',
         Arguments={
             '--input_path': f's3://{bucket}/{key}',
-            '--output_path': f's3://processed-parquet-data-awsproject/{key.replace(".csv", "")}'
+            '--output_path': f's3://bucket2/{key.replace(".csv", "")}'
         }
     )
     return "Glue started to do the job"
